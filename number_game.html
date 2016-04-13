@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            
+            var guess_number=prompt("guess a number");
+            var result=isNaN(guess_number);
+            var lowend=1;
+            var highend=21;
+            var arr=[];
+            
+            while(lowend<=highend)
+            {
+                arr.push(lowend);
+                lowend+=1;
+            }
+            
+            
+            
+            array_length=arr.length;
+            too_small=arr.slice(0,Math.floor(array_length/2));
+            too_large=arr.slice(Math.floor((array_length/2)+1),array_length);
+            chosen_number=arr[Math.floor(array_length/2)];
+            
+            var is_out_of_range=arr.indexOf(parseInt(guess_number));
+            
+            is_too_large=too_large.indexOf(parseInt(guess_number));
+            is_too_small=too_small.indexOf(parseInt(guess_number));
+            
+            if(result){
+                alert("you need to enter a number");
+            }
+            else if(is_out_of_range===-1){
+                alert("Out of Range");
+                
+            }
+            else if(is_too_large!==-1){
+                alert("too large");
+            }
+            else if(is_too_small!==-1){
+                alert("too small");
+            }
+            else if(parseInt(guess_number)===chosen_number){
+                alert("perfect number");
+            }
+            else{
+                alert("The number doesnt not fall in any category");
+            }
+            
+            document.write(chosen_number);
+            
+        </script>
+        
+    </body>
+</html>
